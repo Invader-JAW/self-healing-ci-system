@@ -31,6 +31,8 @@ jobs:
         run: |
           cd ${{ env.workingDirAgents }}
           docker build -t self-healing-system .
+          cd..
+          cd ${{ env.workingDirScripts }}
           docker run self-healing-system
 
       - name: Run monitor script (test mode)
