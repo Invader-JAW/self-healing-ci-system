@@ -28,7 +28,7 @@ jobs:
 
       - name: Build agents
         run: |
-          docker build -t self-healing-system ./agents/
+          docker build -t self-healing-system ./agents/Dockerfile
           cd ${{ env.workingDirScripts }}/
           docker run self-healing-system
 
