@@ -1,0 +1,12 @@
+agent3 restarted
+agent2 restarted
+agent1 restarted
+agent4 restarted
+agent3 restarted
+agent2 restarted
+agent1 restarted
+agent4 restarted
+agent3 restarted
+agent2 restarted
+agent1 restarted
+agent4 restarted
