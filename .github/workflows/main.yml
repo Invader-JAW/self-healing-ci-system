@@ -1,7 +1,7 @@
 name: CI Pipeline
 
 env:
-  workingDir: $(System.DefaultWorkingDirectory)/scripts/
+  workingDir:  ./scripts/
 
 on:
   push:
@@ -28,4 +28,4 @@ jobs:
 
       - name: Run monitor script (test mode)
         run: |
-          python ${{ vars.workingDir }}/monitor.py --once
+          python ${{ env.workingDir }}/monitor.py --once
