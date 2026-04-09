@@ -1,7 +1,8 @@
 name: CI Pipeline
 
 env:
-  workingDir:  ./scripts/
+  workingDirScripts:  ./scripts/
+  workingDirAgents:  ./agents/
 
 on:
   push:
@@ -26,6 +27,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install docker
 
+      - name: Build agents
+        run: |
+          cd ${{ env.workingDirAgents }} 
+          docker build -t self-healing-system
+          docker run self-healing-system
+
       - name: Run monitor script (test mode)
         run: |
-          python ${{ env.workingDir }}/monitor.py --once
+          python ${{ env.workingDirScripts }}/monitor.py --once
