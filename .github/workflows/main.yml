@@ -28,4 +28,4 @@ jobs:
 
       - name: Run monitor script (test mode)
         run: |
-          python ${{ vars.workingDir }}\monitor.py --once
+          python ${{ vars.workingDir }}\scripts\monitor.py --once
