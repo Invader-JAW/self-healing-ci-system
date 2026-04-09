@@ -2,6 +2,7 @@ name: CI Pipeline
 
 env:
   workingDirScripts:  ./scripts/
+  workingDir:  ./
 
 on:
   push:
@@ -28,8 +29,7 @@ jobs:
 
       - name: Build agents
         run: |
-          docker build -t self-healing-system ./agents/Dockerfile
-          cd ${{ env.workingDirScripts }}/
+          docker build -t self-healing-system ${{ env.workingDir }}/agents/Dockerfile
           docker run self-healing-system
 
       - name: Run monitor script (test mode)
