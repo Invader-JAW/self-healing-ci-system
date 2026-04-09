@@ -2,7 +2,7 @@ name: CI Pipeline
 
 env:
   workingDirScripts:  ./scripts/
-  workingDir:  ./
+  workingDir:  .
 
 on:
   push:
