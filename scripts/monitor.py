@@ -15,6 +15,7 @@ while True:
         
         if c.status != "running":
             c.restart()
+            print(c.name, "restarted")
             with open("log.txt", "a") as f:
                 f.write(f"{c.name} restarted\n")
     runs += 1
