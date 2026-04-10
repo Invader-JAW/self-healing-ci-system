@@ -4,8 +4,8 @@ FROM ubuntu
 # RUN -d --name agent2 ubuntu bash -c "chmod +x /bin/agent.sh & /bin/agent.sh"
 # RUN -d --name agent3 ubuntu bash -c "chmod +x /bin/agent.sh & /bin/agent.sh"
 # RUN -d --name agent4 ubuntu bash -c "chmod +x /bin/agent.sh & /bin/agent.sh"
-RUN find . -name "agent.sh" -printf "%h\n"
-
+#RUN find . -name "agent.sh" -printf "%h\n"
+RUN find / -name "agent.sh"
 # COPY /home/runner/work/self-healing-ci-system/self-healing-ci-system/scripts/agent.sh agent1:/bin/agent.sh
 # COPY /home/runner/work/self-healing-ci-system/self-healing-ci-system/scripts/agent.sh agent2:/bin/agent.sh
 # COPY /home/runner/work/self-healing-ci-system/self-healing-ci-system/scripts/agent.sh agent3:/bin/agent.sh
