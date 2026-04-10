@@ -4,7 +4,7 @@ import sys
 client = docker.from_env()
 
 RUN_ONCE = "--once" in sys.argv
-MAX_RUNS = 60
+MAX_RUNS = 5
 
 runs = 0
 
