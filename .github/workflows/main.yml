@@ -32,7 +32,7 @@ jobs:
 
       - name: Build agents
         run: |
-          docker build -t self-healing-system-${{ matrix.agent_name }} ${{ github.workspace }}/agents/${{ matrix.agent_name }}
+          docker build -t self-healing-system-${{ matrix.agent_name }} ${{ github.workspace }}/agents
       
       - name: Run build agents
         run: |
