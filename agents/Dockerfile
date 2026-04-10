@@ -7,5 +7,4 @@ RUN for item in ${names}; do \
     LABEL agent.name=${names} \
     COPY ./agent.sh . \
     RUN chmod +x agent.sh \
-    ENTRYPOINT ["./agent.sh"] \
-    done
+    ENTRYPOINT ["./agent.sh"]
