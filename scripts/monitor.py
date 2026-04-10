@@ -18,7 +18,7 @@ while True:
             with open("log.txt", "a") as f:
                 f.write(f"{c.name} restarted\n")
     runs += 1
-    if RUN_ONCE or runs >= MAX_RUNS:
+    if runs >= MAX_RUNS:
         print("Completed monitoring cycles, exiting gracefully.")
         break
     time.sleep(5)
