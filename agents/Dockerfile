@@ -1,6 +1,6 @@
 FROM ubuntu
 
-WORKDIR /
+WORKDIR /scripts/
 
 # RUN -d --name agent1 ubuntu bash -c "chmod +x /bin/agent.sh & /bin/agent.sh"
 # RUN -d --name agent2 ubuntu bash -c "chmod +x /bin/agent.sh & /bin/agent.sh"
