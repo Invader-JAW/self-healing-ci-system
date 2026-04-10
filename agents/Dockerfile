@@ -1,7 +1,5 @@
 FROM ubuntu
 
-WORKDIR /sripts/
-
 RUN -d --name agent1 ubuntu bash -c "chmod +x /bin/agent.sh & /bin/agent.sh"
 RUN -d --name agent2 ubuntu bash -c "chmod +x /bin/agent.sh & /bin/agent.sh"
 RUN -d --name agent3 ubuntu bash -c "chmod +x /bin/agent.sh & /bin/agent.sh"
