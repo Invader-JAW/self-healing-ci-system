@@ -30,7 +30,10 @@ jobs:
       - name: Build agents
         run: |
           docker build -t self-healing-system ${{ github.workspace }}/agents
-          docker run -v ${{ github.workspace }}/scripts/ self-healing-system
+      
+      - name: Run build agents
+        run: |
+          docker run -v ${{ github.workspace }}/scripts self-healing-system
 
       - name: Run monitor script (test mode)
         run: |
