@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,10 +29,12 @@ jobs:
 
       - name: Build agents
         run: |
-          cd ${{ env.workingDirAgents }} 
-          docker build -t self-healing-system
-          docker run self-healing-system
+          docker build -t self-healing-system ${{ github.workspace }}/agents
+      
+      - name: Run build agents
+        run: |
+          docker run -v ${{ github.workspace }}/scripts self-healing-system
 
       - name: Run monitor script (test mode)
         run: |
-          python ${{ env.workingDirScripts }}/monitor.py --once
+          python ${{ github.workspace }}/scripts/monitor.py --once
