@@ -1,9 +1,5 @@
 name: CI Pipeline
 
-env:
-  workingDirScripts:  ./scripts/
-  workingDirAgents:  ./agents/
-
 on:
   push:
     branches: [ "main" ]
