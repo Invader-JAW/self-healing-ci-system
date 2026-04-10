@@ -2,7 +2,7 @@
 
 while true; do
     echo "Agent running..."
-    sleep 60
+    sleep 5
 
     if [ $((RANDOM % 10000)) -eq 0 ]; then
     echo "Agent crashed!"
