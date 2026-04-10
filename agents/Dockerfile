@@ -1,6 +1,6 @@
 FROM ubuntu
 
 WORKDIR /agents/
-ARG names="agent1 agent2 agent3 agent4"
+ARG names="1 2 3 4"
 
-RUN for item in ${names}; do LABEL agent.name=${item} COPY ./agent.sh . RUN chmod +x agent.sh ENTRYPOINT ["./agent.sh"] ;done
+RUN for item in ${names}; do LABEL agent.name=agent${item} COPY ./agent.sh . RUN chmod +x agent.sh ENTRYPOINT ["./agent.sh"] ;done
