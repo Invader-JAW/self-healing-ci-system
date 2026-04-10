@@ -1,9 +1,5 @@
 name: CI Pipeline
 
-env:
-  workingDirScripts:  ./scripts/
-  workingDirAgents:  ./agents/
-
 on:
   push:
     branches: [ "main" ]
@@ -12,6 +8,9 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        agent_name: [agent1, agent2, agent3, agent4]
 
     steps:
       - name: Checkout repository
@@ -29,11 +28,11 @@ jobs:
 
       - name: Build agents
         run: |
-          docker build -t self-healing-system ${{ github.workspace }}/agents
+          docker build -t self-healing-system-${{ matrix.agent_name }} ${{ github.workspace }}/agents
       
       - name: Run build agents
         run: |
-          docker run -v ${{ github.workspace }}/scripts self-healing-system
+          docker run -d -v ${{ github.workspace }}/scripts self-healing-system-${{ matrix.agent_name }}
 
       - name: Run monitor script (test mode)
         run: |
